@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Player Registration | W.A.F</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --waf-navy: #0a2540;
+        --waf-blue: #1c4b8c;
+        --waf-gold: #c8a951;
+        --waf-light: #f8f9fa;
+        --waf-gray: #6c757d;
+      }
+      body {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 2rem 1rem;
+      }
+
+      .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+      .navbar-brand {
+        font-weight: 800;
+        color: var(--waf-navy);
+        font-size: 1.3rem;
+      }
+
+      .register-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+
+      .register-header {
+        background: linear-gradient(
+          135deg,
+          var(--waf-navy) 0%,
+          var(--waf-blue) 100%
+        );
+        color: white;
+        padding: 3rem 2rem;
+        text-align: center;
+        position: relative;
+      }
+      .register-header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--waf-gold), #fff);
+      }
+      .header-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2.5rem;
+      }
+      .register-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+      }
+      .register-subtitle {
+        font-size: 1rem;
+        opacity: 0.9;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .register-body {
+        padding: 3rem 2rem;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--waf-navy);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 3px solid var(--waf-gold);
+        display: inline-block;
+      }
+
+      .form-label {
+        font-weight: 600;
+        color: var(--waf-navy);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.5rem;
+      }
+      .form-control,
+      .form-select {
+        border: 2px solid #e9ecef;
+        border-radius: 10px;
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+        transition: all 0.3s;
+      }
+      .form-control:focus,
+      .form-select:focus {
+        border-color: var(--waf-blue);
+        box-shadow: 0 0 0 4px rgba(28, 75, 140, 0.1);
+      }
+      .form-text {
+        font-size: 0.8rem;
+        color: var(--waf-gray);
+        margin-top: 0.3rem;
+      }
+
+      .input-group-custom {
+        position: relative;
+        margin-bottom: 1.5rem;
+      }
+      .input-icon {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--waf-gray);
+        font-size: 1.1rem;
+        z-index: 1;
+      }
+      .form-control-with-icon {
+        padding-left: 3rem;
+      }
+
+      .age-group-selector {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .age-option {
+        border: 2px solid #e9ecef;
+        border-radius: 10px;
+        padding: 1rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .age-option:hover {
+        border-color: var(--waf-blue);
+        background: #f8f9fa;
+      }
+      .age-option input[type="radio"] {
+        display: none;
+      }
+      .age-option.selected {
+        border-color: var(--waf-blue);
+        background: linear-gradient(135deg, var(--waf-blue), var(--waf-navy));
+        color: white;
+      }
+      .age-label {
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: block;
+      }
+      .age-desc {
+        font-size: 0.75rem;
+        opacity: 0.8;
+        margin-top: 0.25rem;
+      }
+
+      .btn-submit {
+        background: linear-gradient(
+          135deg,
+          var(--waf-navy) 0%,
+          var(--waf-blue) 100%
+        );
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 1rem 2rem;
+        font-weight: 700;
+        font-size: 1.05rem;
+        width: 100%;
+        margin-top: 1rem;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(10, 37, 64, 0.3);
+      }
+      .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(10, 37, 64, 0.4);
+      }
+      .btn-submit:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .alert {
+        border-radius: 10px;
+        border: none;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .progress-steps {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+        gap: 1rem;
+      }
+      .step {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--waf-gray);
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+      .step.active {
+        color: var(--waf-blue);
+      }
+      .step-number {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #e9ecef;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+      }
+      .step.active .step-number {
+        background: var(--waf-blue);
+        color: white;
+      }
+
+      .info-box {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border-left: 4px solid var(--waf-blue);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+      }
+      .info-box-title {
+        font-weight: 700;
+        color: var(--waf-navy);
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .register-header {
+          padding: 2rem 1.5rem;
+        }
+        .register-title {
+          font-size: 1.75rem;
+        }
+        .register-body {
+          padding: 2rem 1.5rem;
+        }
+        .age-group-selector {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="fas fa-shield-alt me-2" style="color: var(--waf-blue)"></i>
+          WISDOM ACADEMY FOOTBALL
+        </a>
+        <a href="index.html" class="btn btn-outline-secondary btn-sm">
+          <i class="fas fa-arrow-left me-1"></i> Back to Home
+        </a>
+      </div>
+    </nav>
+
+    <!-- Registration Container -->
+    <div class="register-container">
+      <!-- Header -->
+      <div class="register-header">
+        <div class="header-icon">
+          <i class="fas fa-user-plus"></i>
+        </div>
+        <h1 class="register-title">JOIN THE ACADEMY</h1>
+        <p class="register-subtitle">
+          Begin your journey to professional football. Fill out the form below
+          to register for our development program.
+        </p>
+      </div>
+
+      <!-- Body -->
+      <div class="register-body">
+        <!-- Progress Steps -->
+        <div class="progress-steps">
+          <div class="step active">
+            <div class="step-number">1</div>
+            <span>Personal Info</span>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <span>Details</span>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <span>Submit</span>
+          </div>
+        </div>
+
+        <!-- Info Box -->
+        <div class="info-box">
+          <div class="info-box-title">
+            <i class="fas fa-info-circle"></i>
+            Registration Information
+          </div>
+          <p class="mb-0 small">
+            All fields marked with <span class="text-danger">*</span> are
+            required. Please ensure all information is accurate. Our team will
+            review your application and contact you within 5-7 business days.
+          </p>
+        </div>
+
+        <div id="regAlert" class="alert d-none" role="alert"></div>
+
+        <form id="regForm">
+          <!-- Personal Information -->
+          <div class="mb-4">
+            <h3 class="section-title">Personal Information</h3>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label"
+                  >First Name <span class="text-danger">*</span></label
+                >
+                <div class="input-group-custom">
+                  <i class="fas fa-user input-icon"></i>
+                  <input
+                    type="text"
+                    id="firstName"
+                    class="form-control form-control-with-icon"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label"
+                  >Last Name <span class="text-danger">*</span></label
+                >
+                <div class="input-group-custom">
+                  <i class="fas fa-user input-icon"></i>
+                  <input
+                    type="text"
+                    id="lastName"
+                    class="form-control form-control-with-icon"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label"
+                  >Date of Birth <span class="text-danger">*</span></label
+                >
+                <div class="input-group-custom">
+                  <i class="fas fa-calendar input-icon"></i>
+                  <input
+                    type="date"
+                    id="dob"
+                    class="form-control form-control-with-icon"
+                    required
+                  />
+                </div>
+                <div class="form-text">Must be between 6-21 years old</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label"
+                  >Gender <span class="text-danger">*</span></label
+                >
+                <div class="input-group-custom">
+                  <i class="fas fa-venus-mars input-icon"></i>
+                  <select
+                    id="gender"
+                    class="form-select form-control-with-icon"
+                    required
+                  >
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Age Group Selection -->
+          <div class="mb-4">
+            <h3 class="section-title">
+              Select Age Group <span class="text-danger">*</span>
+            </h3>
+            <div class="age-group-selector" id="ageGroupSelector">
+              <label class="age-option">
+                <input type="radio" name="ageGroup" value="U8" required />
+                <span class="age-label">U8</span>
+                <span class="age-desc">Under 8 years</span>
+              </label>
+              <label class="age-option">
+                <input type="radio" name="ageGroup" value="U10" required />
+                <span class="age-label">U10</span>
+                <span class="age-desc">Under 10 years</span>
+              </label>
+              <label class="age-option">
+                <input type="radio" name="ageGroup" value="U12" required />
+                <span class="age-label">U12</span>
+                <span class="age-desc">Under 12 years</span>
+              </label>
+              <label class="age-option">
+                <input type="radio" name="ageGroup" value="U15" required />
+                <span class="age-label">U15</span>
+                <span class="age-desc">Under 15 years</span>
+              </label>
+              <label class="age-option">
+                <input type="radio" name="ageGroup" value="U18" required />
+                <span class="age-label">U18</span>
+                <span class="age-desc">Under 18 years</span>
+              </label>
+              <label class="age-option">
+                <input type="radio" name="ageGroup" value="Senior" required />
+                <span class="age-label">Senior</span>
+                <span class="age-desc">18+ years</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="mb-4">
+            <h3 class="section-title">Contact Information</h3>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label"
+                  >Parent/Guardian Name
+                  <span class="text-danger">*</span></label
+                >
+                <div class="input-group-custom">
+                  <i class="fas fa-user-tie input-icon"></i>
+                  <input
+                    type="text"
+                    id="parentName"
+                    class="form-control form-control-with-icon"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label"
+                  >Parent/Guardian Email
+                  <span class="text-danger">*</span></label
+                >
+                <div class="input-group-custom">
+                  <i class="fas fa-envelope input-icon"></i>
+                  <input
+                    type="email"
+                    id="parentEmail"
+                    class="form-control form-control-with-icon"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label"
+                  >Phone Number <span class="text-danger">*</span></label
+                >
+                <div class="input-group-custom">
+                  <i class="fas fa-phone input-icon"></i>
+                  <input
+                    type="tel"
+                    id="phone"
+                    class="form-control form-control-with-icon"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Emergency Contact</label>
+                <div class="input-group-custom">
+                  <i class="fas fa-phone-alt input-icon"></i>
+                  <input
+                    type="tel"
+                    id="emergencyContact"
+                    class="form-control form-control-with-icon"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Information -->
+          <div class="mb-4">
+            <h3 class="section-title">Additional Information</h3>
+            <div class="row g-3">
+              <div class="col-12">
+                <label class="form-label">Previous Football Experience</label>
+                <textarea
+                  id="experience"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Tell us about any previous clubs, teams, or training..."
+                ></textarea>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Medical Conditions / Allergies</label>
+                <textarea
+                  id="medicalNotes"
+                  class="form-control"
+                  rows="3"
+                  placeholder="Please list any medical conditions, allergies, or injuries we should be aware of..."
+                ></textarea>
+                <div class="form-text">
+                  This information is confidential and only shared with coaching
+                  staff
+                </div>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Position of Interest</label>
+                <select id="position" class="form-select">
+                  <option value="">Select preferred position</option>
+                  <option value="goalkeeper">Goalkeeper</option>
+                  <option value="defender">Defender</option>
+                  <option value="midfielder">Midfielder</option>
+                  <option value="forward">Forward/Striker</option>
+                  <option value="flexible">Flexible / Any Position</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <i class="fas fa-paper-plane me-2"></i> Submit Registration
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script>
+      // Age group selector visual feedback
+      document.querySelectorAll(".age-option").forEach((option) => {
+        option.addEventListener("click", function () {
+          document
+            .querySelectorAll(".age-option")
+            .forEach((o) => o.classList.remove("selected"));
+          this.classList.add("selected");
+          this.querySelector('input[type="radio"]').checked = true;
+        });
+      });
+
+      // Form submission
+      document
+        .getElementById("regForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const btn = document.getElementById("submitBtn");
+          const alert = document.getElementById("regAlert");
+          const originalContent = btn.innerHTML;
+
+          btn.disabled = true;
+          btn.innerHTML =
+            '<i class="fas fa-spinner fa-spin me-2"></i> Submitting...';
+          alert.classList.add("d-none");
+
+          try {
+            await apiFetch("/registrations", {
+              method: "POST",
+              body: JSON.stringify({
+                firstName: document.getElementById("firstName").value,
+                lastName: document.getElementById("lastName").value,
+                dob: document.getElementById("dob").value,
+                ageGroup: document.querySelector(
+                  'input[name="ageGroup"]:checked',
+                ).value,
+                parentName: document.getElementById("parentName").value,
+                parentEmail: document.getElementById("parentEmail").value,
+                phone: document.getElementById("phone").value,
+                medicalNotes: document.getElementById("medicalNotes").value,
+              }),
+            });
+
+            alert.className = "alert alert-success";
+            alert.innerHTML =
+              '<i class="fas fa-check-circle me-2"></i> <strong>Registration Successful!</strong> We have received your application. Our team will review it and contact you at ' +
+              document.getElementById("parentEmail").value +
+              " within 5-7 business days.";
+            alert.classList.remove("d-none");
+
+            document.getElementById("regForm").reset();
+            document
+              .querySelectorAll(".age-option")
+              .forEach((o) => o.classList.remove("selected"));
+
+            btn.innerHTML =
+              '<i class="fas fa-check me-2"></i> Submitted Successfully';
+            btn.classList.remove("btn-submit");
+            btn.classList.add("btn", "btn-success");
+
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          } catch (err) {
+            alert.className = "alert alert-danger";
+            alert.textContent = "❌ " + err.message;
+            alert.classList.remove("d-none");
+            btn.disabled = false;
+            btn.innerHTML = originalContent;
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }
+        });
+    </script>
+  </body>
+</html>

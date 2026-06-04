@@ -19,10 +19,10 @@ app.use('/api', rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/news', require('./routes/newsRoutes'));
-// app.use('/api/events', require('./routes/eventRoutes'));
-// app.use('/api/registrations', require('./routes/registrationRoutes'));
-// app.use('/api/gallery', require('./routes/galleryRoutes'));
-// app.use('/api/donations', require('./routes/donationRoutes'));
+app.use('/api/events', require('./routes/eventRoutes'));
+app.use('/api/registrations', require('./routes/registrationRoutes'));
+app.use('/api/users', require('./routes/userRoutes'));
+
 
 app.use(errorMiddleware);
 module.exports = app;
