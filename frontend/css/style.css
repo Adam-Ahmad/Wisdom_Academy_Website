@@ -1,8 +1,0 @@
-body { font-family: system-ui, -apple-system, sans-serif; }
-.cursor-pointer { cursor: pointer; }
-.card { border: none; transition: transform 0.2s; }
-.card:hover { transform: translateY(-4px); }
-.alert { margin-top: 1rem; }
-@media (max-width: 768px) {
-  .navbar-nav .nav-link { margin: 0.25rem 0; }
-}

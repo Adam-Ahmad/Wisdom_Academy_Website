@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wisdom Academy Football</title>
     <link
+      rel="icon"
+      type="image/x-icon"
+      href="/frontend/assets/icons/favicon.ico"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
@@ -12,457 +17,276 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="assets/icons/favicon-16x16.png"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
     />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="assets/icons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="48x48"
-      href="assets/icons/favicon-48x48.png"
-    />
-    <link
-      rel="manifest"
-      href="assets/manifest.webmanifest"
-      crossorigin="use-credentials"
-    />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="theme-color" content="#fff" />
-    <meta name="application-name" content="Image to Favicon From Poper" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/icons/apple-touch-icon-180x180.png"
-    />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="black-translucent"
-    />
-    <meta
-      name="apple-mobile-web-app-title"
-      content="Image to Favicon From Poper"
-    />
-    <style>
-      :root {
-        --waf-navy: #0a2540;
-        --waf-blue: #1c4b8c;
-        --waf-gold: #c8a951;
-        --waf-light: #f8f9fa;
-        --waf-gray: #6c757d;
-      }
-      body {
-        font-family: "Segoe UI", system-ui, sans-serif;
-        color: #333;
-      }
-      .navbar {
-        background: rgba(10, 37, 64, 0.95);
-        backdrop-filter: blur(10px);
-        padding: 1rem 0;
-      }
-      .navbar-brand {
-        color: white;
-        font-weight: 700;
-        letter-spacing: 1px;
-      }
-      .nav-link {
-        color: rgba(255, 255, 255, 0.8);
-        font-weight: 500;
-      }
-      .nav-link:hover {
-        color: var(--waf-gold);
-      }
-      .btn-join {
-        background: var(--waf-blue);
-        color: white;
-        border-radius: 20px;
-        padding: 0.5rem 1.5rem;
-      }
-
-      .hero {
-        background:
-          linear-gradient(rgba(10, 37, 64, 0.6), rgba(10, 37, 64, 0.8)),
-          url("https://images.unsplash.com/photo-1522778119026-d647f0565c6a?auto=format&fit=crop&w=1920&q=80");
-        background-size: cover;
-        background-position: center;
-        height: 90vh;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        color: white;
-      }
-      .hero h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        margin-bottom: 1rem;
-      }
-      .hero .subtitle {
-        font-size: 1.2rem;
-        max-width: 700px;
-        margin: 0 auto 2rem;
-        opacity: 0.9;
-      }
-      .btn-hero-primary {
-        background: var(--waf-blue);
-        color: white;
-        border: none;
-        padding: 0.8rem 2rem;
-        border-radius: 30px;
-        font-weight: 600;
-      }
-      .btn-hero-outline {
-        border: 2px solid white;
-        color: white;
-        padding: 0.8rem 2rem;
-        border-radius: 30px;
-        font-weight: 600;
-      }
-      .btn-hero-outline:hover {
-        background: white;
-        color: var(--waf-navy);
-      }
-
-      .ticker {
-        background: var(--waf-navy);
-        color: white;
-        padding: 0.8rem 0;
-        overflow: hidden;
-        white-space: nowrap;
-      }
-      .ticker-content {
-        display: inline-block;
-        animation: scroll 20s linear infinite;
-      }
-      .ticker-item {
-        display: inline-block;
-        margin-right: 3rem;
-        font-weight: 600;
-      }
-      @keyframes scroll {
-        0% {
-          transform: translateX(100%);
-        }
-        100% {
-          transform: translateX(-100%);
-        }
-      }
-
-      .section-title {
-        font-weight: 800;
-        color: var(--waf-navy);
-        margin-bottom: 0.5rem;
-      }
-      .section-subtitle {
-        color: var(--waf-gray);
-        margin-bottom: 2rem;
-      }
-
-      .stat-card {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        text-align: center;
-      }
-      .stat-number {
-        font-size: 2rem;
-        font-weight: 800;
-        color: var(--waf-blue);
-      }
-      .stat-label {
-        color: var(--waf-gray);
-        font-size: 0.9rem;
-      }
-
-      .pathway-img {
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      .roster-card {
-        border: none;
-        border-radius: 16px;
-        overflow: hidden;
-        color: white;
-        position: relative;
-      }
-      .roster-card img {
-        height: 280px;
-        object-fit: cover;
-        width: 100%;
-        transition: transform 0.3s;
-      }
-      .roster-card:hover img {
-        transform: scale(1.05);
-      }
-      .roster-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        padding: 1.5rem;
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-      }
-
-      .news-card {
-        border: none;
-        border-radius: 12px;
-        overflow: hidden;
-        transition: transform 0.2s;
-      }
-      .news-card:hover {
-        transform: translateY(-5px);
-      }
-      .news-img {
-        height: 160px;
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-      }
-      .news-card .card-body {
-        padding: 1rem;
-      }
-      .news-title {
-        font-weight: 700;
-        font-size: 0.95rem;
-        margin-bottom: 0.3rem;
-      }
-
-      .partners {
-        background: var(--waf-light);
-        padding: 3rem 0;
-      }
-      .partner-name {
-        font-weight: 700;
-        color: var(--waf-gray);
-        opacity: 0.6;
-        letter-spacing: 2px;
-      }
-
-      .contact-form {
-        background: white;
-        padding: 2rem;
-        border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      }
-      .map-placeholder {
-        background: #e9ecef;
-        border-radius: 16px;
-        height: 100%;
-        min-height: 350px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--waf-gray);
-      }
-
-      footer {
-        background: var(--waf-navy);
-        color: white;
-        padding: 3rem 0 1.5rem;
-      }
-      footer a {
-        color: rgba(255, 255, 255, 0.7);
-        text-decoration: none;
-      }
-      footer a:hover {
-        color: var(--waf-gold);
-      }
-      .footer-logo {
-        font-weight: 800;
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-      }
-      .newsletter-input {
-        background: rgba(255, 255, 255, 0.1);
-        border: none;
-        color: white;
-      }
-      .newsletter-input::placeholder {
-        color: rgba(255, 255, 255, 0.5);
-      }
-    </style>
+    <link rel="stylesheet" href="/frontend/css/index.css" />
   </head>
   <body>
-    <!-- Navbar -->
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="index.html"
-          ><img
+        <a class="navbar-brand" href="index.html">
+          <img
             src="/frontend/assets/icons/favicon.ico"
             alt="W.A.F"
-            width="30"
-            height="30"
-            class="me-2"
-          />W.A.F</a
-        >
+            width="40"
+            height="40"
+            class="me-2 rounded"
+          />
+          <span class="brand-acronym">W.A.F</span>
+        </a>
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navMenu"
+          data-bs-target="#navbarNav"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navMenu">
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">HOME</a>
+              <a class="nav-link" href="#about">ABOUT</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">ABOUT</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">NEWS</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">EVENTS</a></li>
-
-            <li class="nav-item ms-lg-3">
-              <a class="btn btn-join" href="register.html">JOIN W.A.F</a>
+            <li class="nav-item"><a class="nav-link" href="#news">NEWS</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#events">EVENTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn-join" href="register.html">JOIN US</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container">
-        <!-- <span class="badge bg-light text-dark mb-3 px-3 py-2"
-          >CULTIVATING EXCELLENCE</span
-        > -->
-        <h1>
-          DEVELOPING THE NEXT<br /><span style="color: var(--waf-gold)"
-            >GENERATION OF WISDOM</span
-          >
-        </h1>
-        <p class="subtitle">
-          Join the premier development program at Wisdom Academy Football. We
-          combine professional-grade coaching with state-of-the-art facilities
-          to mold tomorrow's leaders.
-        </p>
-        <div class="d-flex gap-3 justify-content-center flex-wrap">
-          <a href="#" class="btn btn-hero-primary">REGISTER FOR TRYOUTS</a>
-          <a href="#" class="btn btn-hero-outline">EXPLORE PROGRAMS</a>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container h-100 mt-5 mb-3">
+        <div class="row">
+          <div class="col-lg-8 hero-content">
+            <div class="hero-badge mt-5">
+              <i class="fas fa-trophy me-2"></i>Excellence Through Discipline
+              and Teamwork
+            </div>
+            <h1>
+              DEVELOPING THE NEXT YEAR GENERATION OF <br />
+              <span>WISDOM ACADEMY FOOTBALL</span>
+            </h1>
+            <p class="hero-subtitle">BUILDING CHAMPIONS ON AND OFF THE FIELD</p>
+            <div class="hero-buttons m-0">
+              <a href="register.html" class="btn btn-hero-primary">
+                <i class="fas fa-user-plus me-2"></i>REGISTER NOW
+              </a>
+              <a href="#about" class="btn btn-hero-outline">
+                <i class="fas fa-play-circle me-2"></i>EXPLORE PROGRAMS
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Ticker -->
-    <div class="ticker">
-      <div class="ticker-content">
-        <span class="ticker-item">LATEST RESULTS</span>
-        <span class="ticker-item">W.A.F 3-0 - TOTTENHAM</span>
-        <span class="ticker-item">W.A.F 1-1 - ARSENAL FC</span>
-        <span class="ticker-item">W.A.F 2-0 - SOUTH UNITED</span>
-        <span class="ticker-item">W.A.F 4-2 - PREMIER XI</span>
-        <span class="ticker-item">LATEST RESULTS</span>
-        <span class="ticker-item">W.A.F 3-0 - TOTTENHAM</span>
+    <!-- Results Ticker -->
+    <div class="results-ticker">
+      <div class="ticker-wrapper">
+        <div class="ticker-item">
+          <i class="fas fa-futbol me-2"></i>LATEST RESULTS
+        </div>
+        <div class="ticker-item">W.A.F 3-0 - TOTTENHAM</div>
+        <div class="ticker-item">W.A.F 1-1 - ARSENAL FC</div>
+        <div class="ticker-item">W.A.F 2-0 - SOUTH UNITED</div>
+        <div class="ticker-item">W.A.F 4-2 - PREMIER XI</div>
+        <div class="ticker-item">
+          <i class="fas fa-futbol me-2"></i>LATEST RESULTS
+        </div>
+        <div class="ticker-item">W.A.F 3-0 - TOTTENHAM</div>
+        <div class="ticker-item">W.A.F 1-1 - ARSENAL FC</div>
+        <div class="ticker-item">W.A.F 2-0 - SOUTH UNITED</div>
+        <div class="ticker-item">W.A.F 4-2 - PREMIER XI</div>
       </div>
     </div>
 
-    <!-- Pathway -->
-    <section class="py-5">
+    <!-- Mission, Vision, Values -->
+    <section class="section" id="about">
       <div class="container">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-5">
-            <h5 class="text-uppercase fw-bold" style="color: var(--waf-blue)">
-              The Wisdom Pathway
-            </h5>
-            <h2 class="section-title">
-              STRUCTURED PATHWAY TO PROFESSIONAL FOOTBALL
-            </h2>
-            <p class="text-muted">
-              At Wisdom Academy Football, our mission is to cultivate not just
-              professional athletes, but disciplined, intelligent individuals.
-              We provide a structured pathway to professional football through
-              technical mastery, tactical wisdom, and elite conditioning.
-            </p>
-            <div class="row g-3 mt-2">
-              <div class="col-6">
-                <div class="stat-card">
-                  <div class="stat-number">95%</div>
-                  <div class="stat-label">PRO PLACEMENT</div>
+        <div class="text-center mb-5">
+          <h2 class="section-title">WHO WE ARE</h2>
+          <p class="section-subtitle">Discover what drives us to excellence</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="info-card">
+              <div
+                class="info-card-image"
+                style="
+                  background-image: url(/frontend/assets/images/Team2.jpeg);
+                "
+              >
+                <div class="info-card-icon">
+                  <i class="fas fa-bullseye"></i>
                 </div>
               </div>
-              <div class="col-6">
-                <div class="stat-card">
-                  <div class="stat-number">12+</div>
-                  <div class="stat-label">EXPERT COACHES</div>
-                </div>
+              <div class="info-card-content">
+                <h3 class="info-card-title">OUR MISSION</h3>
+                <p class="info-card-text">
+                  The mission of Wisdom Academy Football is to provide a
+                  supportive and challenging environment where player-athletes
+                  can develop their skills, build character, and achieve
+                  academic success. We strive to foster a culture of excellence,
+                  sportsmanship, and community engagement, inspiring our players
+                  to become leaders both on and off the field.
+                </p>
               </div>
             </div>
           </div>
-          <div class="col-lg-7">
-            <img
-              src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80"
-              class="img-fluid pathway-img"
-              alt="Team Huddle"
-            />
+          <div class="col-lg-4">
+            <div class="info-card">
+              <div
+                class="info-card-image"
+                style="
+                  background-image: url(/frontend/assets/images/Team2.jpeg);
+                "
+              >
+                <div class="info-card-icon">
+                  <i class="fas fa-eye"></i>
+                </div>
+              </div>
+              <div class="info-card-content">
+                <h3 class="info-card-title">OUR VISION</h3>
+                <p class="info-card-text">
+                  To become a premier football program in the region, recognized
+                  for our commitment to developing well-rounded individuals who
+                  excel in football, academics, and life. We envision a future
+                  where our players are equipped with the skills, knowledge, and
+                  values necessary to succeed in their chosen paths and make a
+                  positive impact in their communities.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="info-card">
+              <div
+                class="info-card-image"
+                style="
+                  background-image: url(/frontend/assets/images/Team2.jpeg);
+                "
+              >
+                <div class="info-card-icon">
+                  <i class="fas fa-heart"></i>
+                </div>
+              </div>
+              <div class="info-card-content">
+                <h3 class="info-card-title">OUR VALUES</h3>
+                <ul class="values-list">
+                  <li>
+                    <strong>Excellence</strong>We strive for excellence in all
+                    aspects of our program.
+                  </li>
+                  <li>
+                    <strong>Discipline</strong> We uphold high standards of
+                    conduct, commitment, and accountability.
+                  </li>
+                  <li>
+                    <strong>Teamwork</strong>We work together, support one
+                    another, and value collective success.
+                  </li>
+                  <li>
+                    <strong>Respect</strong>We treat teammates, opponents,
+                    officials, and the community with dignity and respect.
+                  </li>
+                  <li>
+                    <strong>Integrity</strong>We act honestly, ethically, and
+                    responsibly both on and off the field.
+                  </li>
+                  <li>
+                    <strong>Sportsmanship</strong>We compete fairly and
+                    graciously, demonstrating character in victory and defeat.
+                  </li>
+                  <li>
+                    <strong>Leadership</strong>We encourage initiative,
+                    responsibility, and positive influence within our teams and
+                    communities.
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Roster -->
-    <section class="py-5 bg-light">
+    <!-- Teams Section -->
+    <section class="section teams-section">
       <div class="container">
         <div class="text-center mb-5">
-          <h5 class="text-uppercase fw-bold" style="color: var(--waf-blue)">
-            The W.A.F Roster
-          </h5>
-          <h2 class="section-title">DEVELOPMENT TEAMS</h2>
+          <h2 class="section-title">THE W.A.F ROSTER</h2>
           <p class="section-subtitle">
-            Structured development tiers for every stage of a player's
-            evolution.
+            Structured development tiers for every stage of a player's evolution
           </p>
         </div>
         <div class="row g-4">
           <div class="col-md-4">
-            <div class="card roster-card">
-              <img
-                src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=600&q=80"
-                alt="U12"
-              />
-              <div class="roster-overlay">
-                <span class="badge bg-warning text-dark mb-2">FOUNDATION</span>
-                <h4 class="fw-bold">U12 WISDOM ELITE</h4>
-                <p class="mb-0 small">
-                  <i class="fas fa-star me-1"></i> Technical Mastery & Base
+            <div class="team-card">
+              <div class="team-image-wrapper">
+                <img
+                  src="/frontend/assets/images/WhatsApp Image 2026-06-04 at 21.15.28.jpeg"
+                  alt="U12 Team"
+                  class="team-image"
+                />
+                <span class="team-badge">FOUNDATION</span>
+              </div>
+              <div class="team-content">
+                <h3 class="team-title">U12 WISDOM ELITE</h3>
+                <p class="team-description">
+                  <i class="fas fa-star text-warning me-2"></i>Technical Mastery
+                  & Base
                 </p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card roster-card">
-              <img
-                src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=600&q=80"
-                alt="U15"
-              />
-              <div class="roster-overlay">
-                <span class="badge bg-info text-dark mb-2">DEVELOPMENT</span>
-                <h4 class="fw-bold">U15 PRO PATH</h4>
-                <p class="mb-0 small">
-                  <i class="fas fa-bolt me-1"></i> Tactical Intelligence
+            <div class="team-card">
+              <div class="team-image-wrapper">
+                <img
+                  src="/frontend/assets/images/Team2.jpeg"
+                  alt="U15 Team"
+                  class="team-image"
+                />
+                <span class="team-badge" style="background: #3b82f6"
+                  >DEVELOPMENT</span
+                >
+              </div>
+              <div class="team-content">
+                <h3 class="team-title">U15 PRO PATH</h3>
+                <p class="team-description">
+                  <i class="fas fa-brain text-primary me-2"></i>Tactical
+                  Intelligence
                 </p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card roster-card">
-              <img
-                src="https://images.unsplash.com/photo-1552667466-07770ae180d0?auto=format&fit=crop&w=600&q=80"
-                alt="U18"
-              />
-              <div class="roster-overlay">
-                <span class="badge bg-primary mb-2">ELITE</span>
-                <h4 class="fw-bold">U18 W.A.F ACADEMY</h4>
-                <p class="mb-0 small">
-                  <i class="fas fa-trophy me-1"></i> Professional Readiness
+            <div class="team-card">
+              <div class="team-image-wrapper">
+                <img
+                  src="/frontend/assets/images/WhatsApp Image 2026-06-04 at 21.15.28.jpeg"
+                  alt="U18 Team"
+                  class="team-image"
+                />
+                <span class="team-badge" style="background: #10b981"
+                  >ELITE</span
+                >
+              </div>
+              <div class="team-content">
+                <h3 class="team-title">U18 W.A.F ACADEMY</h3>
+                <p class="team-description">
+                  <i class="fas fa-trophy text-success me-2"></i>Professional
+                  Readiness
                 </p>
               </div>
             </div>
@@ -471,99 +295,80 @@
       </div>
     </section>
 
-    <!-- Dispatch -->
-    <section class="py-5">
+    <!-- News Section -->
+    <section class="section" id="news">
       <div class="container">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <h5 class="fw-bold m-0" style="color: var(--waf-navy)">
-            WISDOM DISPATCH
-          </h5>
-          <div>
-            <button class="btn btn-outline-secondary btn-sm me-2">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="btn btn-outline-secondary btn-sm">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
+        <div class="text-center mb-5">
+          <h2 class="section-title">WISDOM DISPATCH</h2>
+          <p class="section-subtitle">Latest updates from around the academy</p>
         </div>
         <div class="row g-4">
-          <div class="col-md-3">
-            <div class="card news-card">
-              <div class="news-img"></div>
-              <div class="card-body">
-                <span class="text-muted small">ACHIEVEMENT</span>
-                <div class="news-title">NEW HIGH PERFORMANCE CENTER OPENED</div>
-                <a
-                  href="#"
-                  class="text-decoration-none small fw-bold"
-                  style="color: var(--waf-blue)"
-                  >READ MORE →</a
-                >
+          <div class="col-md-6 col-lg-3">
+            <div class="news-card">
+              <div class="news-image">
+                <span class="news-category">ACHIEVEMENT</span>
+              </div>
+              <div class="news-content">
+                <h4 class="news-title">NEW HIGH PERFORMANCE CENTER OPENED</h4>
+                <a href="#" class="news-link"
+                  >READ MORE <i class="fas fa-arrow-right"></i
+                ></a>
               </div>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="card news-card">
+          <div class="col-md-6 col-lg-3">
+            <div class="news-card">
               <div
-                class="news-img"
+                class="news-image"
                 style="
                   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 "
-              ></div>
-              <div class="card-body">
-                <span class="text-muted small">SELECTION</span>
-                <div class="news-title">
+              >
+                <span class="news-category">SELECTION</span>
+              </div>
+              <div class="news-content">
+                <h4 class="news-title">
                   FIVE W.A.F PLAYERS JOIN NATIONAL TEAM
-                </div>
-                <a
-                  href="#"
-                  class="text-decoration-none small fw-bold"
-                  style="color: var(--waf-blue)"
-                  >READ MORE →</a
-                >
+                </h4>
+                <a href="#" class="news-link"
+                  >READ MORE <i class="fas fa-arrow-right"></i
+                ></a>
               </div>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="card news-card">
+          <div class="col-md-6 col-lg-3">
+            <div class="news-card">
               <div
-                class="news-img"
+                class="news-image"
                 style="
                   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
                 "
-              ></div>
-              <div class="card-body">
-                <span class="text-muted small">GUIDANCE</span>
-                <div class="news-title">
-                  THE IMPORTANCE OF NUTRITIONAL WISDOM
-                </div>
-                <a
-                  href="#"
-                  class="text-decoration-none small fw-bold"
-                  style="color: var(--waf-blue)"
-                  >READ MORE →</a
-                >
+              >
+                <span class="news-category">GUIDANCE</span>
+              </div>
+              <div class="news-content">
+                <h4 class="news-title">THE IMPORTANCE OF NUTRITIONAL WISDOM</h4>
+                <a href="#" class="news-link"
+                  >READ MORE <i class="fas fa-arrow-right"></i
+                ></a>
               </div>
             </div>
           </div>
-          <div class="col-md-3">
-            <div class="card news-card">
+          <div class="col-md-6 col-lg-3">
+            <div class="news-card">
               <div
-                class="news-img"
+                class="news-image"
                 style="
                   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
                 "
-              ></div>
-              <div class="card-body">
-                <span class="text-muted small">PARTNERSHIP</span>
-                <div class="news-title">W.A.F ANNOUNCES NEW GLOBAL SPONSOR</div>
-                <a
-                  href="#"
-                  class="text-decoration-none small fw-bold"
-                  style="color: var(--waf-blue)"
-                  >READ MORE →</a
-                >
+              >
+                <span class="news-category">PARTNERSHIP</span>
+              </div>
+              <div class="news-content">
+                <h4 class="news-title">W.A.F ANNOUNCES NEW GLOBAL SPONSOR</h4>
+                <a href="#" class="news-link"
+                  >READ MORE <i class="fas fa-arrow-right"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -572,79 +377,74 @@
     </section>
 
     <!-- Partners -->
-    <section class="partners">
+    <section class="partners-section">
       <div class="container">
-        <div class="text-center mb-4">
-          <span
-            class="text-uppercase small fw-bold"
-            style="color: var(--waf-gray); letter-spacing: 3px"
-            >OUR GLOBAL PARTNERS</span
-          >
-        </div>
-        <div
-          class="d-flex justify-content-around align-items-center flex-wrap gap-4"
-        >
-          <span class="partner-name">VELOCITY</span>
-          <span class="partner-name">AERO</span>
-          <span class="partner-name">SUMMIT</span>
-          <span class="partner-name">PRIME</span>
-          <span class="partner-name">TITAN</span>
-          <span class="partner-name">CORE</span>
+        <p class="partners-title">OUR GLOBAL PARTNERS</p>
+        <div class="row">
+          <div class="col-6 col-md-3">
+            <div class="partner-logo">URCS</div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="partner-logo">UNHCR</div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="partner-logo">TPO</div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="partner-logo">OPM</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="py-5">
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
       <div class="container">
         <div class="row g-4">
-          <div class="col-lg-5">
-            <div class="contact-form">
-              <h4 class="fw-bold mb-1">GET IN TOUCH</h4>
-              <p class="text-muted small mb-4">
+          <div class="col-lg-6">
+            <div class="contact-card">
+              <h3 class="contact-title">GET IN TOUCH</h3>
+              <p class="contact-text">
                 Ready to join Wisdom Academy Football? Contact our performance
                 team today.
               </p>
               <form>
-                <div class="mb-3">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="FULL NAME"
-                  />
-                </div>
-                <div class="mb-3">
-                  <input
-                    type="email"
-                    class="form-control"
-                    placeholder="EMAIL ADDRESS"
-                  />
-                </div>
-                <div class="mb-3">
-                  <select class="form-select">
-                    <option>Player Registration</option>
-                    <option>General Inquiry</option>
-                    <option>Sponsorship</option>
-                  </select>
-                </div>
-                <button
-                  type="submit"
-                  class="btn btn-primary w-100 py-2"
-                  style="background: var(--waf-blue); border: none"
-                >
-                  SEND MESSAGE
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Name"
+                  required
+                />
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  required
+                />
+                <input type="text" class="form-control" placeholder="Subject" />
+                <textarea
+                  class="form-control"
+                  rows="4"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+                <button type="submit" class="btn btn-submit">
+                  <i class="fas fa-paper-plane me-2"></i>SEND MESSAGE
                 </button>
               </form>
             </div>
           </div>
-          <div class="col-lg-7">
-            <div class="map-placeholder">
-              <div class="text-center">
-                <i class="fas fa-map-marker-alt fa-3x mb-3"></i>
-                <h5 class="fw-bold">W.A.F HEADQUARTERS</h5>
-                <p class="small">Wisdom Campus, Legacy Lane, WC1 2AF, London</p>
-              </div>
-            </div>
+          <div class="col-lg-6">
+            <h1 class="m-4">OUR LOCATION</h1>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.543499976158!2d32.15606407371573!3d1.934885459418758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177a91007438f76d%3A0x5b8497ea161bccfb!2sWisdom%20Academy%20Football!5e0!3m2!1sen!2sug!4v1780688119544!5m2!1sen!2sug"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -655,49 +455,123 @@
       <div class="container">
         <div class="row g-4">
           <div class="col-lg-4">
-            <div class="footer-logo">WISDOM ACADEMY FOOTBALL</div>
-            <p class="small opacity-75">
+            <div class="footer-brand">WISDOM ACADEMY FOOTBALL</div>
+            <p class="footer-text">
               Building the bridge between raw potential and professional wisdom
               since 2010.
             </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
           </div>
-          <div class="col-lg-2">
-            <h6 class="fw-bold mb-3">QUICK LINKS</h6>
-            <ul class="list-unstyled small">
-              <li class="mb-2"><a href="#">ABOUT US</a></li>
-              <li class="mb-2"><a href="#">OUR TEAMS</a></li>
-              <li class="mb-2"><a href="#">TRYOUTS</a></li>
+          <div class="col-lg-2 col-md-6">
+            <h4 class="footer-title">QUICK LINKS</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="#about"
+                  ><i class="fas fa-chevron-right"></i>About Us</a
+                >
+              </li>
+              <li>
+                <a href="#news"><i class="fas fa-chevron-right"></i>News</a>
+              </li>
+              <li>
+                <a href="register.html"
+                  ><i class="fas fa-chevron-right"></i>Join W.A.F</a
+                >
+              </li>
             </ul>
           </div>
-          <div class="col-lg-2">
-            <h6 class="fw-bold mb-3">CONNECT</h6>
-            <ul class="list-unstyled small">
-              <li class="mb-2"><a href="#">INSTAGRAM</a></li>
-              <li class="mb-2"><a href="#">TWITTER</a></li>
-              <li class="mb-2"><a href="#">LINKEDIN</a></li>
+          <div class="col-lg-2 col-md-6">
+            <h4 class="footer-title">CONNECT</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-facebook-f"></i>Facebook</a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+              </li>
             </ul>
           </div>
           <div class="col-lg-4">
-            <h6 class="fw-bold mb-3">NEWSLETTER</h6>
-            <div class="input-group">
+            <h4 class="footer-title">NEWSLETTER</h4>
+            <p class="footer-text">
+              Subscribe to stay updated with our latest news and events.
+            </p>
+            <form class="newsletter-form">
               <input
                 type="email"
-                class="form-control newsletter-input"
-                placeholder="YOUR EMAIL"
+                class="newsletter-input"
+                placeholder="Your Email Address"
+                required
               />
-              <button class="btn btn-outline-light">
-                <i class="fas fa-arrow-right"></i>
+              <button type="submit" class="btn btn-newsletter">
+                <i class="fas fa-paper-plane me-2"></i>SUBSCRIBE
               </button>
-            </div>
+            </form>
           </div>
         </div>
-        <hr class="my-4 opacity-25" />
-        <div class="text-center small opacity-75">
-          © 2026 WISDOM ACADEMY FOOTBALL. ALL RIGHTS RESERVED.
+        <div class="footer-bottom">
+          <p>&copy; 2026 WISDOM ACADEMY FOOTBALL. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <div
+      class="scroll-top"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        const scrollTop = document.querySelector(".scroll-top");
+
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+
+        if (window.scrollY > 500) {
+          scrollTop.classList.add("visible");
+        } else {
+          scrollTop.classList.remove("visible");
+        }
+      });
+
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Form submission prevention (for demo)
+      document.querySelectorAll("form").forEach((form) => {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Thank you for your submission! This is a demo form.");
+          this.reset();
+        });
+      });
+    </script>
   </body>
 </html>
