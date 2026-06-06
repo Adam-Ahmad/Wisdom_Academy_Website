@@ -448,11 +448,11 @@
 
       .news-image {
         height: 200px;
-        background: linear-gradient(
+        /* background: linear-gradient(
           135deg,
           var(--secondary-blue) 0%,
           var(--primary-navy) 100%
-        );
+        ); */
         position: relative;
       }
 
