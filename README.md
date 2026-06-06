@@ -4,14 +4,14 @@ A modern, full-stack web application for Wisdom Academy Football, featuring a re
 
 ##  Features
 
-### 🌐 Public Website
+###  Public Website
 - Responsive homepage with hero section, mission/vision/values, and development tiers
 - News & events feed with category filtering
 - Player registration form with validation & success feedback
 - Contact form & academy location map
 - Newsletter subscription & social media integration
 
-### 🛡️ Admin Dashboard
+###  Admin Dashboard
 - JWT Authentication: Secure login with role-based access control
 - Analytics Overview: Total players, pending registrations, gallery stats
 - Registration Manager: View, filter, search, approve/reject player applications
@@ -19,16 +19,17 @@ A modern, full-stack web application for Wisdom Academy Football, featuring a re
 - Media Gallery: Drag-and-drop image/video upload with preview & delete
 - Responsive UI: Collapsible sidebar, mobile-friendly layout, toast notifications
 
-### 🛠️ Tech Stack
-Frontend: HTML5, CSS3, Vanilla JavaScript, Bootstrap 5 
-Backend: Node.js, Express.js 
-Database: MongoDB + Mongoose ODM 
-Auth: JSON Web Tokens (JWT), bcryptjs 
-File Uploads: Multer (Admin Gallery) 
-Dev Tools: Nodemon, dotenv, express-validator, helmet, cors 
+###  Tech Stack
+- Frontend: HTML5, CSS3, Vanilla JavaScript, Bootstrap 5 
+- Backend: Node.js, Express.js 
+- Database: MongoDB + Mongoose ODM 
+- Auth: JSON Web Tokens (JWT), bcryptjs 
+- File Uploads: Multer (Admin Gallery) 
+- Dev Tools: Nodemon, dotenv, express-validator, helmet, cors 
 
 ### Project Structure
 
+```
 wisdom-academy-football/
 ├── backend/
 │   ├── src/
@@ -61,3 +62,5 @@ wisdom-academy-football/
 │
 ├── .gitignore
 └── README.md
+
+```
