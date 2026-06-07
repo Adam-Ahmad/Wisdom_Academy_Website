@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = process.env.API_BASE || "https://wisdom-academy-website-backend.vercel.app/api";
 
 // Auth Guard
 function requireAdmin() {
