@@ -16,7 +16,7 @@ router.get('/', async (req, res, next) => {
     }
 })
 
-// Adimin Only
+// Admin Only
 router.post('/', protect, authorize('admin', 'editor'), async (req, res, next) => {
     try {
         const event = await Event.create(req.body);
@@ -24,6 +24,15 @@ router.post('/', protect, authorize('admin', 'editor'), async (req, res, next) =
     } catch (err) {
         next(err);
     }
+})
+
+router.get('/admin', protect, authorize('admin'), async (req, res, next) => {
+  try {
+    const events = (await Event.find()).toSorted((a, b) => b.createdAt - a.createdAt)
+    res.status(200).json({ success: true, data: events});
+  } catch (err) {
+    next(err)
+  }
 })
 
 module.exports = router; 

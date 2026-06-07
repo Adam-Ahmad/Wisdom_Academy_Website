@@ -24,4 +24,13 @@ router.post('/', protect, authorize('admin', 'editor'), async (req, res, next) =
   } catch (err) { next(err); }
 });
 
+router.get('/admin', protect, authorize('admin'), async (req, res, next) => {
+  try {
+    const news = (await News.find()).toSorted((a, b) => b.createdAt - a.createdAt)
+    res.status(200).json({ success: true, data: news});
+  } catch (err) {
+    next(err)
+  }
+})
+
 module.exports = router;
