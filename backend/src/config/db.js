@@ -6,9 +6,9 @@ const connectDB = async () => {
       dbName: 'football_academy',
       serverSelectionTimeoutMS: 5000
     });
-    console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
-    console.error('❌ MongoDB Connection Error:', error.message);
+    console.error('MongoDB Connection Error:', error.message);
     process.exit(1);
   }
 };

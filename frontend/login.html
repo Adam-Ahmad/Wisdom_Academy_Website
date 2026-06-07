@@ -129,10 +129,11 @@
           btn.innerHTML =
             '<span class="loading-spinner"></span> Authenticating...';
           alert.classList.remove("show");
+          s;
 
           try {
             const response = await fetch(
-              "https://wisdom-academy-website-backend.vercel.app/api/auth/login",
+              "http://localhost:5000/api/auth/login",
               {
                 method: "POST",
                 headers: {
