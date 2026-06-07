@@ -23,3 +23,5 @@ async function apiFetch(endpoint, options = {}) {
     throw err;
   }
 }
+
+export default API_BASE;
