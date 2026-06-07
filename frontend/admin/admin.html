@@ -27,7 +27,15 @@
     <button class="mobile-toggle"><i class="fas fa-bars"></i></button>
     <aside class="sidebar">
       <div class="sidebar-header">
-        <div class="sidebar-logo">W.A.F</div>
+        <div class="sidebar-logo">
+          <img
+            src="/frontend/assets/icons/favicon.ico"
+            alt="W.A.F"
+            width="50"
+            height="50"
+            class="rounded"
+          />
+        </div>
         <div class="sidebar-title">ADMIN HUB</div>
         <div class="sidebar-subtitle">Wisdom Performance</div>
       </div>
@@ -185,7 +193,9 @@
           ]);
 
           document.getElementById("totalPlayers").textContent =
-            regs.data?.length || 0;
+            regs.data?.length -
+              regs.data?.filter((r) => r.status === "rejected").length -
+              regs.data?.filter((r) => r.status === "pending").length || 0;
           document.getElementById("pendingRegs").textContent =
             regs.data?.filter((r) => r.status === "pending").length || 0;
 
