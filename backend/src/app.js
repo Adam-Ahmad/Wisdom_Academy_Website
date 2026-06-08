@@ -20,7 +20,14 @@ app.use('/api', rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/registrations', require('./routes/registrationRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
-
-
 app.use(errorMiddleware);
+
+
+app.get('/', (req, res) => {
+  res.status(200).json({ 
+    status: "success", 
+    message: "Your Vercel Node.js backend is live!" 
+  });
+});
+
 module.exports = app;
