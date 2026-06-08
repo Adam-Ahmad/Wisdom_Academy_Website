@@ -16,7 +16,7 @@ app.use(cors());
 
 // Configure CORS options
 const corsOptions = {
-  origin: 'https://wisdom-academy-website.vercel.app',
+  origin: 'https://wisdom-academy-website.vercel.app/api',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true 
