@@ -10,23 +10,41 @@ const errorMiddleware = require('./middlewares/errorMiddleware');
 const app = express();
 connectDB();
 
-
 app.use(helmet());
-app.use(cors());
 
-// Configure CORS options
-const corsOptions = {
-  origin: 'https://wisdom-academy-website.vercel.app/api',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true 
-};
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); 
+// app.use('/api/auth', authRouter);
 
 app.use(express.json({ limit: '10mb' }));
 app.use(morgan('dev'));
 app.use('/api', rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
+
+
+// Configure loose CORS for development and production stability
+app.use(cors({
+  origin: '*', // Allows requests from any frontend origin during debugging
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+// Explicitly catch all pre-flight OPTIONS requests
+app.options('*', (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.sendStatus(200);
+});
+
+// Global Error Handler (Prevents serverless crashes from dropping headers)
+app.use((err, req, res, next) => {
+  console.error("CRITICAL BACKEND ERROR: ", err.stack);
+  res.setHeader("Access-Control-Allow-Origin", "*"); // Keeps browser happy
+  res.status(500).json({ 
+    error: true, 
+    message: "Internal server error occurred.",
+    details: err.message 
+  });
+});
+
 
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));
